@@ -1,4 +1,5 @@
 import './App.css';
+import Day1 from './Day1/Day1';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <p> But it didn't start yet as of me writing this, so there's nothing here. </p>
         <p> Come back soon!~~</p>
       </header>
+      <Day1 />
     </div>
   );
 }
