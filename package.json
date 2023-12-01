@@ -2,6 +2,7 @@
   "name": "jazck_advent_of_code_2023",
   "version": "0.0.1",
   "private": true,
+  "homepage": "https://jacksonzck.github.io/jazck_advent_of_code_2023/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
