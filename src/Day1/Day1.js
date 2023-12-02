@@ -65,8 +65,6 @@ export default function Day1() {
                 if (lastMatch !== null) break;
             }
             if (firstMatch !== null) {
-                console.log(firstMatch)
-                console.log(lastMatch)
                 ourpart2Sum = Number(ourpart2Sum) + Number(numberParser(firstMatch[0]) + numberParser(lastMatch[0]))
             }
         }
@@ -82,7 +80,6 @@ export default function Day1() {
                 <h4>Part 1</h4>
                 <form onSubmit={star1part1} onChange={star1part1}>
                     <textarea name="Day1Part1Text" />
-                    <button type="submit"> Submit </button>
                 </form>
                 <p>Sum of all calibration values is {part1Sum}.</p>
 
@@ -91,7 +88,6 @@ export default function Day1() {
                 <h4>Part 2</h4>
                 <form onSubmit={star1part2} onChange={star1part2}>
                     <textarea name="Day1Part2Text" />
-                    <button type="submit"> Submit </button>
                 </form>
                 <p>Sum of all calibration values is {part2Sum}.</p></div>
         </div>

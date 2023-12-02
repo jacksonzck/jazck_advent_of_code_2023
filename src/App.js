@@ -1,9 +1,10 @@
 import './App.css';
 import Day1 from './Day1/Day1';
+import Day2 from './Day2/Day2'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" onKeyDown={(e) => document.getElementById("jeff").play()}>
       <header>
         <p> Howdy there! </p>
         <p> Welcome to my Advent of Code Page! </p>
@@ -12,7 +13,8 @@ function App() {
         <p> Source code is at <a href="https://github.com/jacksonzck/jazck_advent_of_code_2023">https://github.com/jacksonzck/jazck_advent_of_code_2023</a>.</p>
         <p> Come back soon!~~</p>
       </header>
-      <Day1 />
+      <Day1/>
+      <Day2/>
     </div>
   );
 }
