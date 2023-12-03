@@ -10,6 +10,8 @@ export default function Day3() {
         let content = e.target.value
         let thisIsAGoodIdea = pyodide.runPython(`
         # Python is really performant for loops, making it a great choice for this project. 
+        # And no, I didn't do the code in python first, submit it to AoC, and *then* finagle it into this react project. 
+        # Check the commit times :D
 def part1(content: str):
     goodIndex = set()
     for lineindex, line in enumerate(content.split()):
