@@ -53,15 +53,15 @@ export default function Day2() {
         setPart2Sum(sum)
     }
 
-    return (<>
+    return (<div className='column-flexer'>
         <h3>Star 2</h3>
         <div label="Day2Part1">
             <div className="Cubes">
-                <label htmlFor={"Day2Green" + myCount}>Green Cubes</label>
+                <label htmlFor={"Day2Green" + myCount}>Green Cubes </label>
                 <input id={"Day2Green" + myCount} type="number" value={allowedGreens} onChange={e => setAllowedGreens(e.target.value)} />
-                <label htmlFor={"Day2Red" + myCount}>Red Cubes</label>
+                <label htmlFor={"Day2Red" + myCount}> Red Cubes </label>
                 <input id={"Day2Red" + myCount} type="number" value={allowedReds} onChange={e => setAllowedReds(e.target.value)} />
-                <label htmlFor={"Day2Blue" + myCount}>Blue Cubes</label>
+                <label htmlFor={"Day2Blue" + myCount}> Blue Cubes </label>
                 <input id={"Day2Blue" + myCount} type="number" value={allowedBlues} onChange={e => setAllowedBlues(e.target.value)} />
             </div>
             <h4>Part 1</h4>
@@ -73,5 +73,5 @@ export default function Day2() {
             <textarea onChange={part2} />
             <p>The sum of the powers of all the games is {part2Sum}.</p>
         </div>
-    </>)
+    </div>)
 }

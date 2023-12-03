@@ -73,7 +73,7 @@ export default function Day1() {
 
 
     return (
-        <div className='Day1'>
+        <div className='Day1 column-flexer'>
             <h3>Star 1</h3>
             <div label="Day1Content">
                 <div label="Day1Part1"></div>

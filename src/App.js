@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App" onKeyDown={(e) => document.getElementById("jeff").play()}>
       <header>
-        <div className="header-stuff">
+        <div className="row-flexer">
           <img src={neco} alt="Neco Arc"></img>
           <img src={love_live} alt="I never watched that show..."></img>
           <img src={knives} alt="I never watched that show..."></img>
@@ -37,8 +37,10 @@ function App() {
           <img src={knives} alt="I never watched that show..."></img>
         </div>
       </header>
-      <Day1 />
-      <Day2 />
+      <div className="row-flexer">
+        <Day1 />
+        <Day2 />
+      </div>
       <Day3 />
     </div>
   );

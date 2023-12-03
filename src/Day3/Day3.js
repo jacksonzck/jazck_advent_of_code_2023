@@ -2,16 +2,14 @@
 import './Day3.css'
 import { useState } from 'react'
 import cfusionaskedforthis from './youaskedforthis.png'
-//let count = 0
 export default function Day3() {
-    //count++
     let [part1Sum, setpart1Sum] = useState(0)
     let [part2Sum, setPart2Sum] = useState(0)
     async function part1(e) {
         let pyodide = await loadPyodide();
         let content = e.target.value
         let thisIsAGoodIdea = pyodide.runPython(`
-        # Python is really performant for loops, making it a great choice for targeting across language
+        # Python is really performant for loops, making it a great choice for this project. 
 def part1(content: str):
     goodIndex = set()
     for lineindex, line in enumerate(content.split()):
@@ -76,11 +74,9 @@ part1
             for index, character in enumerate(line):
                 if character == "*":
                     adjacent_numbers = list()
-                    #print(f"found * at {lineindex}, {index}")
                     for key in [(lineindex - 1, index - 1), (lineindex - 1, index), (lineindex - 1, index + 1), (lineindex, index - 1), (lineindex, index + 1), (lineindex + 1, index - 1), (lineindex + 1, index), (lineindex + 1, index + 1)]:
                         if key in numbers and numbers[key] not in adjacent_numbers:
                             adjacent_numbers.append(numbers[key])
-                    #print(adjacent_numbers)
                     if len(adjacent_numbers) == 2:
                         sum = sum + (int(adjacent_numbers[0][:-4]) * int(adjacent_numbers[1][:-4]))
         return sum
