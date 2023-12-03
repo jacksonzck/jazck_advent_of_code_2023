@@ -87,6 +87,44 @@ part1
         setPart2Sum(thisIsAGoodIdea(content))
     }
 
+    async function part2file(e) {
+        let pyodide = await loadPyodide();
+        let content = await e.target.files[0].text()
+        let thisIsAGoodIdea = pyodide.runPython(`
+    def part2(content: str):
+        numbers = dict()
+        sum = 0
+        for lineindex, line in enumerate(content.split()):
+            coolindex = list()
+            potential_number = ""
+            for index, character in enumerate(line):
+                if character.isdigit():
+                    potential_number = potential_number + character
+                    coolindex.append((lineindex, index))
+                elif potential_number != "":
+                    for coolestindex in coolindex:
+                        numbers[coolestindex] = potential_number + "l" + str(lineindex % 10) + "l" + str(index % 10)
+                        # This can break if a number is more than like, 6 digits long under rare circumstances
+                    potential_number = ""
+                    coolindex = list()
+            if potential_number != "":
+                for coolestindex in coolindex:
+                    numbers[coolestindex] = potential_number + "l" + str(lineindex % 10) + "l" + str(index % 10)
+        for lineindex, line in enumerate(content.split()):
+            for index, character in enumerate(line):
+                if character == "*":
+                    adjacent_numbers = list()
+                    for key in [(lineindex - 1, index - 1), (lineindex - 1, index), (lineindex - 1, index + 1), (lineindex, index - 1), (lineindex, index + 1), (lineindex + 1, index - 1), (lineindex + 1, index), (lineindex + 1, index + 1)]:
+                        if key in numbers and numbers[key] not in adjacent_numbers:
+                            adjacent_numbers.append(numbers[key])
+                    if len(adjacent_numbers) == 2:
+                        sum = sum + (int(adjacent_numbers[0][:-4]) * int(adjacent_numbers[1][:-4]))
+        return sum
+    part2
+        `);
+        setPart2Sum(thisIsAGoodIdea(content))
+    }
+
     return (
         <div className='Day1'>
             <h3>Star 3</h3>
@@ -97,6 +135,8 @@ part1
             <p>The sum of the part numbers is {part1Sum}.</p>
             <h4>Part 2</h4>
             <textarea onChange={part2}/>
+            <p> NEW! File input! Throw in your large files here!!!! </p>
+            <input type="file" accept=".txt" onChange={part2file}/>
             <p>The sum of the gear ratios is {part2Sum}.</p>
         </div>
     )
