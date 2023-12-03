@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import './Day3.css'
 import { useState } from 'react'
+import cfusionaskedforthis from './youaskedforthis.png'
 //let count = 0
 export default function Day3() {
     //count++
@@ -91,6 +92,8 @@ part1
     return (
         <div className='Day1'>
             <h3>Star 3</h3>
+            <img src={cfusionaskedforthis} alt="CFuision asked for this."></img>
+            <p>Don't worry CFusion, I've wrote my code in a way to allow you to understand. 😸</p>
             <h4>Part 1</h4>
             <textarea onChange={part1}/>
             <p>The sum of the part numbers is {part1Sum}.</p>
