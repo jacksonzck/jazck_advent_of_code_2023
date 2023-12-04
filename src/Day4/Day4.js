@@ -7,16 +7,11 @@ export default function Day4() {
     function part1(content) {
         let points = 0
         for (const element of content.split('\n')) {
-            //console.log(element)
             const matched = element.match(/Card +[0-9]*: (.*)\|(.*)/)
             if(matched === null) continue;
             let wins = 0
-            //console.log(matched[1].match(/[0-9]+ /g).slice(1))
             for (const winner of matched[1].match(/[0-9]+ /g)) {
-                //console.log(winner)
                 for (const ourNum of matched[2].match(/ [0-9]+/g)) {
-                    //console.log(ourNum)
-                    //console.log(winner)
                     if(Number(ourNum) === Number(winner)) {
                         wins++;
                         console.log(ourNum + "   " + winner)
@@ -30,7 +25,34 @@ export default function Day4() {
     }
 
     function part2(content) {
-        setpart2Sum(1)
+        let points = []
+        let amounts = []
+        for (const element of content.split('\n')) {
+            const matched = element.match(/Card +[0-9]*: (.*)\|(.*)/)
+            if(matched === null) continue;
+            let wins = 0
+            for (const winner of matched[1].match(/[0-9]+ /g)) {
+                for (const ourNum of matched[2].match(/ [0-9]+/g)) {
+                    if(Number(ourNum) === Number(winner)) {
+                        wins++;
+                    } 
+                }
+            }
+            points.push(Number(wins))
+            amounts.push(Number(1))
+        }
+        for (const sindex in amounts) {
+            const index = Number(sindex)
+            if(points[index] === 0) continue;
+            for(let i = 1; i < points[index] + 1; i++) {
+                amounts[index + i] = Number(amounts[index + i]) + Number(amounts[index])
+            }
+        }
+        let sum = 0
+        for (const sindex in amounts) {
+            sum = sum + Number(amounts[Number(sindex)])
+        }
+        setpart2Sum(sum)
     }
 
     return <div className='column-flexer'>
