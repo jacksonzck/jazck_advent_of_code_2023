@@ -2,6 +2,7 @@ import './App.css';
 import Day1 from './Day1/Day1';
 import Day2 from './Day2/Day2';
 import Day3 from './Day3/Day3';
+import Day4 from './Day4/Day4';
 import neco from './neco_arc.png'
 import love_live from './idkineverwatchedit.gif'
 import knives from './knives.webp'
@@ -41,7 +42,10 @@ function App() {
         <Day1 />
         <Day2 />
       </div>
+      <div className="row-flexer">
       <Day3 />
+      <Day4 />
+      </div>
     </div>
   );
 }
