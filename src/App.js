@@ -4,6 +4,7 @@ import Day2 from './Day2/Day2';
 import Day3 from './Day3/Day3';
 import Day4 from './Day4/Day4';
 import Day5 from './Day5/Day5.js'
+import Day6 from './Day6/Day6'
 import neco from './neco_arc.png'
 import love_live from './idkineverwatchedit.gif'
 import knives from './knives.webp'
@@ -48,6 +49,7 @@ function App() {
       <Day4 />
       </div>
       <Day5 />
+      <Day6 />
     </div>
   );
 }
