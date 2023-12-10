@@ -6,10 +6,12 @@ import Day4 from './Day4/Day4';
 import Day5 from './Day5/Day5.js'
 import Day6 from './Day6/Day6'
 import Day7 from './Day7/Day7'
+import Day8 from './Day8/Day8'
 import neco from './neco_arc.png'
 import love_live from './idkineverwatchedit.gif'
 import knives from './knives.webp'
 import Day9 from './Day9/Day9';
+import Day10 from './Day10/Day10'
 
 function App() {
   return (
@@ -42,6 +44,7 @@ function App() {
           <img src={knives} alt="I never watched that show..."></img>
         </div>
       </header>
+      <Day10 />
       <div className="row-flexer">
         <Day1 />
         <Day7 />
@@ -52,8 +55,11 @@ function App() {
       <Day4 />
       <Day9 />
       </div>
+      <div className='row-flexer'>
       <Day5 />
       <Day6 />
+      <Day8 />
+        </div>
     </div>
   );
 }
