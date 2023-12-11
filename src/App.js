@@ -12,6 +12,7 @@ import love_live from './idkineverwatchedit.gif'
 import knives from './knives.webp'
 import Day9 from './Day9/Day9';
 import Day10 from './Day10/Day10'
+import Day11 from './Day11/Day11';
 
 function App() {
   return (
@@ -44,7 +45,10 @@ function App() {
           <img src={knives} alt="I never watched that show..."></img>
         </div>
       </header>
+      <div className="row-flexer">
       <Day10 />
+      <Day11 />
+      </div>
       <div className="row-flexer">
         <Day1 />
         <Day7 />
